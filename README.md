@@ -30,9 +30,9 @@ isFruitOrVegetable('apple') // isFruit
 when('apple')('isFruit')
 ```
 
-`when` also accepts a function and a regular expression
+`when` also accepts a function or a regular expression
 
 ```js
 when(/apple/)
-when(str => str.includes('eggplant'))
+when(str => str.includes('apple'))
 ```
