@@ -1,6 +1,6 @@
 {
   "name": "functional-switch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A functional implementation of switch.",
   "main": "index.js",
   "scripts": {
