@@ -2,7 +2,7 @@
 
 > A functional implementation of switch.
 
-It just an idea right now and I have not written any code, yet. Discussions are welcome!
+This library is in alpha now. It would be great if you help me try it.
 
 ## Installation
 
@@ -17,22 +17,38 @@ import { cond, when, otherwise } from 'functional-switch'
 const isFruitOrVegetable = cond(
   when('apple', 'isFruit'),
   when('orange', 'isFruit'),
-  when('eggplant', 'isVegetable'),
+  when('eggplant', () => {
+    return 'isVegetable'
+  }),
   otherwise('isFruit')
 )
 
 isFruitOrVegetable('apple') // isFruit
 ```
 
-`when` is curried
+## API
+
+### `when()`
 
 ```js
-when('apple')('isFruit')
+when(
+  clause: any,
+  statement: any
+): [clause, statement]
 ```
 
-`when` also accepts a function or a regular expression
+### `otherwise()`
 
 ```js
-when(/apple/)
-when(str => str.includes('apple'))
+otherwise(
+  statement: any
+): [statement]
+```
+
+### `cond()`
+
+```js
+cond(
+  ...conditions: [clause, statement] | [statement]
+): (expression: any) => any
 ```
