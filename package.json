@@ -27,7 +27,8 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.6.5",
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
   },
   "dependencies": {
     "lodash": "^4.6.1"
