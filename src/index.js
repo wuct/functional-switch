@@ -1,9 +1,3 @@
-import cond from './cond'
-import when from './when'
-import otherwise from './cond'
-
-export default {
- cond,
- when,
- otherwise,
-}
+export { default as cond } from './cond'
+export { default as when } from './when'
+export { default as otherwise } from './cond'
