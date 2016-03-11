@@ -19,6 +19,13 @@ describe('cond', () => {
     expect(result).to.equal('isFruit')
   })
 
+  it('call the function with supplied arguments', () => {
+    const statementSpy = spy()
+    const args = [{}, {}]
+    cond(['apple', statementSpy])('apple', ...args)
+    expect(statementSpy.getCall(0).calledWithExactly(...args)).to.be.true
+  })
+
   it('returns the default if no claused matched', () => {
     const result = cond(['isVegetable'])('apple')
     expect(result).to.equal('isVegetable')

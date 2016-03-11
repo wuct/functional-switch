@@ -18,14 +18,14 @@ const cond = (...conditions) => {
     }
   })
 
-  return expression => {
+  return (expression, ...otherArgs) => {
     const statement = conditionMap.get(expression)
 
     return isFunction(statement)
-      ? statement()
+      ? statement(...otherArgs)
       : statement || (
         isFunction(defaultValue)
-          ? defaultValue()
+          ? defaultValue(...otherArgs)
           : defaultValue
       )
   }
